@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
 import "./App.css";
+import axios from "axios";
 
 const App = () => {
-  return <div className="container">Welcome to Breaking bad api</div>;
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://www.breakingbadapi.com/api/characters`
+      );
+      console.log(result.data);
+    };
+    fetchItems();
+  }, []);
+  return (
+    <div className="container">
+      <Header />
+    </div>
+  );
 };
 
 export default App;
