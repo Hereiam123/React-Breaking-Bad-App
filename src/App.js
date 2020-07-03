@@ -1,14 +1,8 @@
 import React from "react";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome to Breaking bad api</p>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  return <div className="container">Welcome to Breaking bad api</div>;
+};
 
 export default App;
